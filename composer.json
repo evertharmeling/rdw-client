@@ -18,13 +18,16 @@
   },
   "require-dev": {
     "phpunit/phpunit": "^4.3.5|^5.0",
-    "php-http/mock-client": "^0.3.0"
+    "php-http/mock-client": "^0.3.0",
+    "symfony/var-dumper": "^3.2"
   },
   "suggest": {
     "php-http/guzzle6-adapter": "An HTTPlug adapter for the Guzzle 6 HTTP client"
   },
   "autoload": {
-    "psr-0": { "evertharmeling\\RDW": "lib/" }
+    "psr-0": {
+      "RDWApi": "src/"
+    }
   },
   "extra": {
     "branch-alias": {
