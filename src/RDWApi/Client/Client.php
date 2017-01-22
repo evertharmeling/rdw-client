@@ -7,6 +7,7 @@ use Http\Client\Exception\RequestException;
 use Http\Client\HttpClient;
 use Psr\Http\Message\ResponseInterface;
 use RDWApi\Exception\InvalidResponseException;
+use RDWApi\Exception\VehicleNotFoundException;
 use RDWApi\Model\Vehicle\Vehicle;
 use RDWApi\Parser\VehicleParserInterface;
 
@@ -45,8 +46,6 @@ class Client
      */
     public function getInfo($licensePlate)
     {
-        // @todo handle 404
-
         return $this->responseParser->parse($this->get([
             'kenteken' => $licensePlate
         ]));
@@ -65,7 +64,7 @@ class Client
 
         $response = $this->httpClient->sendRequest($request);
 
-        return $this->parseResponse($response);
+        return $this->handleResponse($response);
     }
 
     /**
@@ -86,8 +85,9 @@ class Client
      *
      * @return mixed
      * @throws InvalidResponseException
+     * @throws VehicleNotFoundException
      */
-    private function parseResponse(ResponseInterface $response)
+    private function handleResponse(ResponseInterface $response)
     {
         $result = json_decode((string) $response->getBody()->getContents());
 
@@ -95,7 +95,9 @@ class Client
             throw new InvalidResponseException('Could not parse response', $response);
         }
 
-        // @todo handle errors
+        if (is_array($result) && count($result) === 0) {
+            throw new VehicleNotFoundException();
+        }
 
         return $result;
     }

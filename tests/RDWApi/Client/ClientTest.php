@@ -12,7 +12,7 @@ use RDWApi\Parser\VehicleParserInterface;
  */
 class ClientTest extends \PHPUnit_Framework_TestCase
 {
-    const LICENSE_PLATE = '73SXR7';
+    const LICENSE_PLATE = '73-SXR-7';
 
     public function testGetInfo()
     {
@@ -20,7 +20,18 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
         $vehicle = $client->getInfo(self::LICENSE_PLATE);
 
-        self::assertInstanceOf(Vehicle::class, $vehicle);
+        static::assertInstanceOf(Vehicle::class, $vehicle);
+        static::assertEquals(self::LICENSE_PLATE, $vehicle->getLicensePlate()->getValue());
+    }
+
+    /**
+     * @expectedException \RDWApi\Exception\VehicleNotFoundException
+     */
+    public function testInvalidLicensePlate()
+    {
+        $client = $this->createClient($this->loadMockResponse('response.invalid_license_plate'));
+
+        $vehicle = $client->getInfo('test');
     }
 
     /**

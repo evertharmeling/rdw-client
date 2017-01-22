@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Date: Sun, 22 Jan 2017 13:26:30 GMT
+Content-Encoding: gzip
+Last-Modified: Sat, 21 Jan 2017 12:42:27 GMT
+Server: nginx
+X-SODA2-Data-Out-Of-Date: false
+Age: 0
+Content-Type: application/json; charset=UTF-8
+Access-Control-Allow-Origin: *
+X-Socrata-Region: aws-eu-west-1-prod
+X-Socrata-RequestId: 4r1x9azsbke2lererx7ok9h71
+X-SODA2-Types: ["number","number","number","number","number","number","number","number","number","number","text","text","text","text","text","number","number","number","number","text","text","text","text","text","text","text","text","text","text","text","number","number","number","number","number","number","number","text","text","number","text","text","number","number","text","text","text","text","text","text","number","number","text","text","text","number","text","text","number","text"]
+X-SODA2-Truth-Last-Modified: Sat, 21 Jan 2017 12:42:27 GMT
+X-SODA2-Fields: ["aanhangwagen_autonoom_geremd","aanhangwagen_middenas_geremd","aantal_cilinders","aantal_deuren","aantal_staanplaatsen","aantal_wielen","aantal_zitplaatsen","afstand_hart_koppeling_tot_achterzijde_voertuig","afstand_voorzijde_voertuig_tot_hart_koppeling","afwijkende_maximum_snelheid","api_gekentekende_voertuigen_assen","api_gekentekende_voertuigen_brandstof","api_gekentekende_voertuigen_carrosserie","api_gekentekende_voertuigen_carrosserie_specifiek","api_gekentekende_voertuigen_voertuigklasse","breedte","bruto_bpm","catalogusprijs","cilinderinhoud","datum_eerste_afgifte_nederland","datum_eerste_toelating","datum_tenaamstelling","eerste_kleur","europese_uitvoeringcategorie_toevoeging","europese_voertuigcategorie","europese_voertuigcategorie_toevoeging","export_indicator","handelsbenaming","inrichting","kenteken","laadvermogen","lengte","massa_ledig_voertuig","massa_rijklaar","maximale_constructiesnelheid_brom_snorfiets","maximum_massa_trekken_ongeremd","maximum_trekken_massa_geremd","merk","openstaande_terugroepactie_indicator","oplegger_geremd","plaats_chassisnummer","retrofit_roetfilter","technische_max_massa_voertuig","toegestane_maximum_massa_voertuig","tweede_kleur","type","type_gasinstallatie","typegoedkeuringsnummer","uitvoering","variant","vermogen_brom_snorfiets","vermogen_massarijklaar","vervaldatum_apk","vervaldatum_tachograaf","voertuigsoort","volgnummer_wijziging_eu_typegoedkeuring","wacht_op_keuren","wam_verzekerd","wielbasis","zuinigheidslabel"]
+X-SODA2-Secondary-Last-Modified: Sat, 21 Jan 2017 12:42:27 GMT
+
+[]

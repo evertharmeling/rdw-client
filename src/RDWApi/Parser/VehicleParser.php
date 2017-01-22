@@ -3,6 +3,7 @@
 namespace RDWApi\Parser;
 
 use RDWApi\Exception\InvalidResponseException;
+use RDWApi\Formatter\LicensePlateFormatter;
 use RDWApi\Model\Vehicle\Brand;
 use RDWApi\Model\Vehicle\Embedabble\Classification;
 use RDWApi\Model\Vehicle\Embedabble\Dates;
@@ -37,7 +38,7 @@ class VehicleParser implements VehicleParserInterface
         $result = current($response);
 
         return new Vehicle(
-            new LicensePlate($result->kenteken),
+            new LicensePlate(LicensePlateFormatter::formatLicensePlate($result->kenteken)),
             new Brand($result->merk),
             new Classification(
                 $result->handelsbenaming,
